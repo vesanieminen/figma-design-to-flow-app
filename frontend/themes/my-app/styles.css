@@ -56,6 +56,7 @@ html {
     --vaadin-input-field-background: #FFF;
     --vaadin-input-field-hover-highlight: var(--lumo-contrast-30pct);
     --vaadin-input-field-border-width: 1px;
+    --vaadin-input-field-border-color: var(--lumo-contrast-30pct);
     --vaadin-button-background: #FFF;
     --vaadin-button-border:  1px solid var(--lumo-primary-color-50pct);
 
