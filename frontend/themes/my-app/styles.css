@@ -58,6 +58,12 @@ html {
     --vaadin-input-field-border-width: 1px;
     --vaadin-button-background: #FFF;
     --vaadin-button-border:  1px solid var(--lumo-primary-color-50pct);
+
+    --light-background-color: #FFF;
+}
+
+.card {
+    background-color: var(--light-background-color);
 }
 
 vaadin-button {
@@ -69,7 +75,7 @@ vaadin-button:hover {
 }
 
 header {
-    background-color: #FFF;
+    background-color: var(--light-background-color);
 }
 
 header nav a[highlight] {
@@ -83,4 +89,11 @@ header nav a:hover {
 
 header nav a[highlight] span {
     font-weight: 600;
+}
+
+vaadin-upload::part(primary-buttons) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
