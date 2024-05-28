@@ -7,6 +7,9 @@ import com.example.application.views.settings.SettingsView;
 import com.example.application.views.tasks.TasksView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
+import com.vaadin.flow.component.avatar.Avatar;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Header;
@@ -14,6 +17,8 @@ import com.vaadin.flow.component.html.ListItem;
 import com.vaadin.flow.component.html.Nav;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.html.UnorderedList;
+import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.theme.lumo.LumoUtility.AlignItems;
 import com.vaadin.flow.theme.lumo.LumoUtility.BoxSizing;
@@ -96,7 +101,23 @@ public class MainLayout extends AppLayout {
 
         }
 
-        header.add(layout, nav);
+        final var searchTextField = new TextField();
+        searchTextField.setPlaceholder("Search");
+        searchTextField.setSuffixComponent(VaadinIcon.SEARCH.create());
+        final var notificationButton = new Button(VaadinIcon.BELL_O.create());
+        notificationButton.addThemeVariants(ButtonVariant.LUMO_TERTIARY);
+        notificationButton.addClassNames(Width.MEDIUM);
+        final var avatar = new Avatar("John Doe", "https://s3-alpha-sig.figma.com/img/1057/7a7c/7ad534e7bf5e3397bde4bc458d14ad59?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=h2EvtZFWeE64L5AvDYhWDvBmIaqXzJ8I9gNU4E2wx-oB2xWwJPCtcyDA7Kzk2XBxv61s4fTm8AjDSb7IEXjp85Y7d6sjfRyNUdyC0rV7O7p07LBYz4TMiKMxRJ3EFWl4ilXpU8lvBZXsa58fgyR-F18zM~lAI7-H1nFQwD-v0CeYFVCjhATagz0~8XJk2qTWntt5x4IdyD57OuFbT1DPi1htDrkT8PcvVPE~V0~gvU96-Tc~3LG~dDTvbqShRAii9IJ2BIophh6mzFFH2rq0Ft~NyVrZZxTzPTRsB3PxyEaOSpSQ7f1tZiX1XClBj8YwnvFuef19khWFwM3qkvYkAQ__");
+        final var topRightDiv = new Div(searchTextField, notificationButton, avatar);
+        topRightDiv.addClassNames(
+                Display.FLEX,
+                AlignItems.CENTER,
+                Margin.Left.AUTO,
+                Margin.Right.MEDIUM,
+                Gap.MEDIUM
+        );
+
+        header.add(layout, nav, topRightDiv);
         return header;
     }
 

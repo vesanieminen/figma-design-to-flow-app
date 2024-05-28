@@ -98,3 +98,8 @@ vaadin-upload::part(primary-buttons) {
     justify-content: center;
     height: 100%;
 }
+
+vaadin-avatar {
+    border-radius: 2rem;
+    border-color: var(--lumo-user-color-3);
+}
