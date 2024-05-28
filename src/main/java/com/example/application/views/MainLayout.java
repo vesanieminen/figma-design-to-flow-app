@@ -53,7 +53,7 @@ public class MainLayout extends AppLayout {
 
             Span text = new Span(menuTitle);
             // Use Lumo classnames for various styling
-            text.addClassNames(FontWeight.MEDIUM, FontSize.MEDIUM, Whitespace.NOWRAP);
+            text.addClassNames(FontSize.MEDIUM, Whitespace.NOWRAP);
 
             if (icon != null) {
                 link.add(icon);
@@ -74,7 +74,7 @@ public class MainLayout extends AppLayout {
 
     private Component createHeaderContent() {
         Header header = new Header();
-        header.addClassNames(BoxSizing.BORDER, Display.FLEX, FlexDirection.COLUMN, Width.FULL);
+        header.addClassNames(BoxSizing.BORDER, Display.FLEX, Width.FULL);
 
         Div layout = new Div();
         layout.addClassNames(Display.FLEX, AlignItems.CENTER, Padding.Horizontal.LARGE);
@@ -84,7 +84,7 @@ public class MainLayout extends AppLayout {
         layout.add(appName);
 
         Nav nav = new Nav();
-        nav.addClassNames(Display.FLEX, Overflow.AUTO, Padding.Horizontal.MEDIUM, Padding.Vertical.XSMALL);
+        nav.addClassNames(Display.FLEX, Overflow.AUTO, Padding.Horizontal.MEDIUM, Padding.Vertical.XSMALL, AlignItems.CENTER);
 
         // Wrap the links in a list; improves accessibility
         UnorderedList list = new UnorderedList();
