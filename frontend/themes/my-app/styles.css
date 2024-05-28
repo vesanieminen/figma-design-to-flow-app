@@ -56,6 +56,20 @@ html {
     --vaadin-input-field-background: #FFF;
     --vaadin-input-field-hover-highlight: var(--lumo-contrast-30pct);
     --vaadin-input-field-border-width: 1px;
+    --vaadin-button-background: #FFF;
+    --vaadin-button-border:  1px solid var(--lumo-primary-color-50pct);
+}
+
+vaadin-button {
+    width: 8.75rem;
+}
+
+vaadin-button:hover {
+    /*cursor: pointer;*/
+}
+
+header {
+    background-color: #FFF;
 }
 
 header nav a[highlight] {
