@@ -29,7 +29,7 @@ public class EmployeesView extends Div {
     public EmployeesView() {
         addClassNames(LumoUtility.FlexDirection.COLUMN, Margin.MEDIUM);
         setWidthFull();
-        setMaxWidth("48rem");
+        setMaxWidth("50rem");
         addClassNames(Margin.Horizontal.AUTO);
 
         final var leftSideDiv = createLeftSideDiv();
