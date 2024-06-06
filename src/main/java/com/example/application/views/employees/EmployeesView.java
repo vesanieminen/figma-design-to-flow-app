@@ -23,15 +23,14 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 
+import static com.example.application.util.Flex.BASIS_40;
+
 @PageTitle("Employees")
 @Route(value = "employees", layout = MainLayout.class)
 public class EmployeesView extends Main {
 
     public EmployeesView() {
         addClassNames(LumoUtility.FlexDirection.COLUMN, Margin.MEDIUM);
-        setWidthFull();
-        setMaxWidth("50rem");
-        addClassNames(Margin.Horizontal.AUTO);
 
         final var leftSideDiv = createLeftSideDiv();
         final var rightSideDiv = createRightSideDiv();
@@ -39,7 +38,8 @@ public class EmployeesView extends Main {
         final var horizontalSection = new Section(leftSideDiv, rightSideDiv);
         horizontalSection.addClassNames(
                 LumoUtility.Display.FLEX,
-                LumoUtility.Gap.XLARGE
+                LumoUtility.Gap.XLARGE,
+                LumoUtility.FlexWrap.WRAP
         );
         add(horizontalSection);
     }
@@ -90,10 +90,10 @@ public class EmployeesView extends Main {
                 jobDetailsForm
         );
 
-        leftSideDiv.setWidthFull();
         leftSideDiv.addClassNames(
                 LumoUtility.Display.FLEX,
-                LumoUtility.FlexDirection.COLUMN
+                LumoUtility.FlexDirection.COLUMN,
+                BASIS_40
         );
         return leftSideDiv;
     }
@@ -142,7 +142,9 @@ public class EmployeesView extends Main {
         );
 
         final var rightSideDiv = new Div(buttonDiv, cardDiv);
-        rightSideDiv.setWidthFull();
+        rightSideDiv.addClassNames(
+                BASIS_40
+        );
         return rightSideDiv;
     }
 
@@ -152,7 +154,7 @@ public class EmployeesView extends Main {
         MEETING_WITH_CEO("Meeting with CEO"),
         ITEM("Item");
 
-        public String caption;
+        public final String caption;
 
         Task(String caption) {
             this.caption = caption;

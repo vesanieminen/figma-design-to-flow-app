@@ -103,3 +103,14 @@ vaadin-avatar {
     border-radius: 2rem;
     border-color: var(--lumo-user-color-3);
 }
+
+.flex-basis-40 {
+    flex: 40%;
+}
+
+/* Responsive layout - makes a one column-layout instead of a two-column layout */
+@media (max-width: 800px) {
+    .flex-basis-40 {
+        flex: 100%;
+    }
+}
