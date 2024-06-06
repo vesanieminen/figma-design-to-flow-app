@@ -11,8 +11,9 @@ import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.H3;
+import com.vaadin.flow.component.html.Main;
+import com.vaadin.flow.component.html.Section;
 import com.vaadin.flow.component.html.Span;
-import com.vaadin.flow.component.listbox.ListBox;
 import com.vaadin.flow.component.listbox.MultiSelectListBox;
 import com.vaadin.flow.component.textfield.EmailField;
 import com.vaadin.flow.component.textfield.TextField;
@@ -24,7 +25,7 @@ import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 
 @PageTitle("Employees")
 @Route(value = "employees", layout = MainLayout.class)
-public class EmployeesView extends Div {
+public class EmployeesView extends Main {
 
     public EmployeesView() {
         addClassNames(LumoUtility.FlexDirection.COLUMN, Margin.MEDIUM);
@@ -35,12 +36,12 @@ public class EmployeesView extends Div {
         final var leftSideDiv = createLeftSideDiv();
         final var rightSideDiv = createRightSideDiv();
 
-        final var horizontalDiv = new Div(leftSideDiv, rightSideDiv);
-        horizontalDiv.addClassNames(
+        final var horizontalSection = new Section(leftSideDiv, rightSideDiv);
+        horizontalSection.addClassNames(
                 LumoUtility.Display.FLEX,
                 LumoUtility.Gap.XLARGE
         );
-        add(horizontalDiv);
+        add(horizontalSection);
     }
 
     private static Div createLeftSideDiv() {
