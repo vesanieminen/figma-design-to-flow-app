@@ -24,6 +24,7 @@ import com.vaadin.flow.theme.lumo.LumoUtility;
 import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 
 import static com.example.application.util.Flex.BASIS_40;
+import static com.example.application.util.Size.MAX_WIDTH_25_REM;
 
 @PageTitle("Employees")
 @Route(value = "employees", layout = MainLayout.class)
@@ -39,7 +40,8 @@ public class EmployeesView extends Main {
         horizontalSection.addClassNames(
                 LumoUtility.Display.FLEX,
                 LumoUtility.Gap.XLARGE,
-                LumoUtility.FlexWrap.WRAP
+                LumoUtility.FlexWrap.WRAP,
+                LumoUtility.JustifyContent.CENTER
         );
         add(horizontalSection);
     }
@@ -93,7 +95,8 @@ public class EmployeesView extends Main {
         leftSideDiv.addClassNames(
                 LumoUtility.Display.FLEX,
                 LumoUtility.FlexDirection.COLUMN,
-                BASIS_40
+                BASIS_40,
+                MAX_WIDTH_25_REM
         );
         return leftSideDiv;
     }
@@ -143,7 +146,8 @@ public class EmployeesView extends Main {
 
         final var rightSideDiv = new Div(buttonDiv, cardDiv);
         rightSideDiv.addClassNames(
-                BASIS_40
+                BASIS_40,
+                MAX_WIDTH_25_REM
         );
         return rightSideDiv;
     }

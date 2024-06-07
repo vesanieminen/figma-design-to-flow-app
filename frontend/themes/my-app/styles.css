@@ -108,6 +108,10 @@ vaadin-avatar {
     flex: 40%;
 }
 
+.max-width-25-rem {
+    max-width: 25rem;
+}
+
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
 @media (max-width: 800px) {
     .flex-basis-40 {
