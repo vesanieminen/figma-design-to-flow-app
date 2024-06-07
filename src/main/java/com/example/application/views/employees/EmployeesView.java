@@ -31,17 +31,20 @@ import static com.example.application.util.Size.MAX_WIDTH_25_REM;
 public class EmployeesView extends Main {
 
     public EmployeesView() {
-        addClassNames(LumoUtility.FlexDirection.COLUMN, Margin.MEDIUM);
-
         final var leftSideDiv = createLeftSideDiv();
         final var rightSideDiv = createRightSideDiv();
 
         final var horizontalSection = new Section(leftSideDiv, rightSideDiv);
+        horizontalSection.setMaxWidth("60rem");
         horizontalSection.addClassNames(
                 LumoUtility.Display.FLEX,
+                LumoUtility.FlexDirection.COLUMN,
+                LumoUtility.Padding.Horizontal.XLARGE,
                 LumoUtility.Gap.XLARGE,
-                LumoUtility.FlexWrap.WRAP,
-                LumoUtility.JustifyContent.CENTER
+                LumoUtility.JustifyContent.CENTER,
+                Margin.Horizontal.AUTO,
+                LumoUtility.Grid.Column.COLUMNS_2,
+                "lg:grid" // change to Grid.Breakpoint.Large.COLUMNS_2 after V24.4 is out.
         );
         add(horizontalSection);
     }
@@ -94,9 +97,7 @@ public class EmployeesView extends Main {
 
         leftSideDiv.addClassNames(
                 LumoUtility.Display.FLEX,
-                LumoUtility.FlexDirection.COLUMN,
-                BASIS_40,
-                MAX_WIDTH_25_REM
+                LumoUtility.FlexDirection.COLUMN
         );
         return leftSideDiv;
     }
@@ -145,10 +146,6 @@ public class EmployeesView extends Main {
         );
 
         final var rightSideDiv = new Div(buttonDiv, cardDiv);
-        rightSideDiv.addClassNames(
-                BASIS_40,
-                MAX_WIDTH_25_REM
-        );
         return rightSideDiv;
     }
 
