@@ -31,6 +31,30 @@ import static com.example.application.util.Size.MAX_WIDTH_25_REM;
 public class EmployeesView extends Main {
 
     public EmployeesView() {
+        final var newEmployeeH1 = new H1("New Employee");
+        newEmployeeH1.addClassNames(Margin.Vertical.LARGE);
+
+        final var saveButton = new Button("Save");
+        saveButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        final var cancelButton = new Button("Cancel");
+        final var buttonDiv = new Div(saveButton, cancelButton);
+        buttonDiv.addClassNames(
+                LumoUtility.Gap.MEDIUM,
+                LumoUtility.JustifyContent.END,
+                Margin.Vertical.LARGE,
+                LumoUtility.Display.Breakpoint.Large.FLEX
+        );
+
+        final var div = new Div(newEmployeeH1, buttonDiv);
+        div.setMaxWidth("60rem");
+        div.addClassNames(
+                LumoUtility.Display.FLEX,
+                LumoUtility.Gap.XLARGE,
+                Margin.Horizontal.AUTO,
+                LumoUtility.JustifyContent.BETWEEN,
+                LumoUtility.Padding.Horizontal.XLARGE
+        );
+
         final var leftSideDiv = createLeftSideDiv();
         final var rightSideDiv = createRightSideDiv();
 
@@ -46,13 +70,10 @@ public class EmployeesView extends Main {
                 LumoUtility.Grid.Column.COLUMNS_2,
                 "lg:grid" // change to Grid.Breakpoint.Large.COLUMNS_2 after V24.4 is out.
         );
-        add(horizontalSection);
+        add(div, horizontalSection);
     }
 
     private static Div createLeftSideDiv() {
-        final var newEmployeeH1 = new H1("New Employee");
-        newEmployeeH1.addClassNames(Margin.Vertical.LARGE);
-
         final var personalDetailsH3 = new H3("Personal details");
         personalDetailsH3.addClassNames(Margin.Top.MEDIUM);
         final var firstnameTextField = new TextField("First name");
@@ -88,7 +109,6 @@ public class EmployeesView extends Main {
         jobDetailsForm.setColspan(supervisorComboBox, 2);
 
         final var leftSideDiv = new Div(
-                newEmployeeH1,
                 personalDetailsH3,
                 personalDetailsForm,
                 jobDetailsH3,
@@ -112,12 +132,6 @@ public class EmployeesView extends Main {
     }
 
     private static Div createRightSideDiv() {
-        final var saveButton = new Button("Save");
-        saveButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-        final var cancelButton = new Button("Cancel");
-        final var buttonDiv = new Div(saveButton, cancelButton);
-        buttonDiv.addClassNames(LumoUtility.Display.FLEX, LumoUtility.Gap.MEDIUM, LumoUtility.JustifyContent.END, Margin.Vertical.LARGE);
-
         final var profilePictureSpan = new Span("Profile picture");
         final var upload = new Upload();
         upload.setHeight("16.25rem");
@@ -145,7 +159,7 @@ public class EmployeesView extends Main {
                 Margin.Top.XLARGE
         );
 
-        final var rightSideDiv = new Div(buttonDiv, cardDiv);
+        final var rightSideDiv = new Div(cardDiv);
         return rightSideDiv;
     }
 
