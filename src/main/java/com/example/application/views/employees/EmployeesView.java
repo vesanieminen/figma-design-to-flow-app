@@ -67,8 +67,8 @@ public class EmployeesView extends Main {
                 LumoUtility.Gap.XLARGE,
                 LumoUtility.JustifyContent.CENTER,
                 Margin.Horizontal.AUTO,
-                LumoUtility.Grid.Column.COLUMNS_2,
-                "lg:grid" // change to Grid.Breakpoint.Large.COLUMNS_2 after V24.4 is out.
+                LumoUtility.Grid.Breakpoint.Large.COLUMNS_2,
+                "lg:grid"
         );
         add(div, horizontalSection);
     }
