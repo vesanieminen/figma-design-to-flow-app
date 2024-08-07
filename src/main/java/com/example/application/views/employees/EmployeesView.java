@@ -45,9 +45,9 @@ public class EmployeesView extends Main {
                 LumoUtility.Display.Breakpoint.Large.FLEX
         );
 
-        final var div = new Div(newEmployeeH1, buttonDiv);
-        div.setMaxWidth("60rem");
-        div.addClassNames(
+        final var headingDiv = new Div(newEmployeeH1, buttonDiv);
+        headingDiv.setMaxWidth("60rem");
+        headingDiv.addClassNames(
                 LumoUtility.Display.FLEX,
                 LumoUtility.Gap.XLARGE,
                 Margin.Horizontal.AUTO,
@@ -61,16 +61,13 @@ public class EmployeesView extends Main {
         final var horizontalSection = new Section(leftSideDiv, rightSideDiv);
         horizontalSection.setMaxWidth("60rem");
         horizontalSection.addClassNames(
-                LumoUtility.Display.FLEX,
-                LumoUtility.FlexDirection.COLUMN,
                 LumoUtility.Padding.Horizontal.XLARGE,
                 LumoUtility.Gap.XLARGE,
-                LumoUtility.JustifyContent.CENTER,
                 Margin.Horizontal.AUTO,
                 LumoUtility.Grid.Breakpoint.Large.COLUMNS_2,
-                "lg:grid"
+                LumoUtility.Display.Breakpoint.Large.GRID
         );
-        add(div, horizontalSection);
+        add(headingDiv, horizontalSection);
     }
 
     private static Div createLeftSideDiv() {
