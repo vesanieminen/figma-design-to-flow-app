@@ -33,6 +33,21 @@ public class EmployeesView extends Main {
     public EmployeesView() {
         addClassNames(LumoUtility.FlexDirection.COLUMN, Margin.MEDIUM);
 
+        final var newEmployeeH1 = new H1("New Employee");
+        newEmployeeH1.addClassNames(Margin.Vertical.LARGE);
+        final var saveButton = new Button("Save");
+        saveButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        final var cancelButton = new Button("Cancel");
+        final var buttonDiv = new Div(saveButton, cancelButton);
+        buttonDiv.addClassNames(LumoUtility.Display.FLEX, LumoUtility.Gap.MEDIUM, LumoUtility.JustifyContent.END, Margin.Vertical.LARGE);
+        final var titleDiv = new Div(newEmployeeH1, buttonDiv);
+        titleDiv.addClassNames(
+                LumoUtility.Display.FLEX,
+                LumoUtility.Gap.XLARGE,
+                LumoUtility.FlexWrap.WRAP,
+                LumoUtility.JustifyContent.CENTER
+        );
+
         final var leftSideDiv = createLeftSideDiv();
         final var rightSideDiv = createRightSideDiv();
 
@@ -43,12 +58,10 @@ public class EmployeesView extends Main {
                 LumoUtility.FlexWrap.WRAP,
                 LumoUtility.JustifyContent.CENTER
         );
-        add(horizontalSection);
+        add(titleDiv, horizontalSection);
     }
 
     private static Div createLeftSideDiv() {
-        final var newEmployeeH1 = new H1("New Employee");
-        newEmployeeH1.addClassNames(Margin.Vertical.LARGE);
 
         final var personalDetailsH3 = new H3("Personal details");
         personalDetailsH3.addClassNames(Margin.Top.MEDIUM);
@@ -85,7 +98,6 @@ public class EmployeesView extends Main {
         jobDetailsForm.setColspan(supervisorComboBox, 2);
 
         final var leftSideDiv = new Div(
-                newEmployeeH1,
                 personalDetailsH3,
                 personalDetailsForm,
                 jobDetailsH3,
@@ -111,11 +123,6 @@ public class EmployeesView extends Main {
     }
 
     private static Div createRightSideDiv() {
-        final var saveButton = new Button("Save");
-        saveButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-        final var cancelButton = new Button("Cancel");
-        final var buttonDiv = new Div(saveButton, cancelButton);
-        buttonDiv.addClassNames(LumoUtility.Display.FLEX, LumoUtility.Gap.MEDIUM, LumoUtility.JustifyContent.END, Margin.Vertical.LARGE);
 
         final var profilePictureSpan = new Span("Profile picture");
         final var upload = new Upload();
@@ -144,7 +151,7 @@ public class EmployeesView extends Main {
                 Margin.Top.XLARGE
         );
 
-        final var rightSideDiv = new Div(buttonDiv, cardDiv);
+        final var rightSideDiv = new Div(cardDiv);
         rightSideDiv.addClassNames(
                 BASIS_40,
                 MAX_WIDTH_25_REM
