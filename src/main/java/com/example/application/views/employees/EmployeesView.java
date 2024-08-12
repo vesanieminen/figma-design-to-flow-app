@@ -30,9 +30,12 @@ public class EmployeesView extends Main {
     public EmployeesView() {
         addClassNames(
                 LumoUtility.Display.GRID,
+                LumoUtility.Grid.Column.COLUMNS_1,
+                LumoUtility.Grid.Breakpoint.Large.COLUMNS_2,
                 Margin.Vertical.XLARGE,
                 Margin.Horizontal.AUTO
         );
+        getStyle().set("column-gap", "62px");
         setMaxWidth("862px");
 
         final var newEmployeeH1 = new H1("New Employee");
@@ -45,28 +48,19 @@ public class EmployeesView extends Main {
                 LumoUtility.Gap.MEDIUM,
                 LumoUtility.Display.Breakpoint.Small.FLEX
         );
-
         final var headingDiv = new Div(newEmployeeH1, buttonDiv);
         headingDiv.setWidthFull();
         headingDiv.addClassNames(
                 LumoUtility.Display.FLEX,
                 LumoUtility.Gap.XLARGE,
-                Margin.Horizontal.AUTO,
                 LumoUtility.JustifyContent.BETWEEN,
-                LumoUtility.Padding.Horizontal.SMALL
+                LumoUtility.Grid.Column.COLUMN_SPAN_2
         );
 
         final var leftSideDiv = createLeftSideDiv();
         final var rightSideDiv = createRightSideDiv();
 
-        final var horizontalSection = new Section(leftSideDiv, rightSideDiv);
-        horizontalSection.addClassNames(
-                LumoUtility.Padding.Horizontal.SMALL,
-                LumoUtility.Gap.XLARGE,
-                LumoUtility.Display.Breakpoint.Large.GRID,
-                LumoUtility.Grid.Breakpoint.Large.COLUMNS_2
-        );
-        add(headingDiv, horizontalSection);
+        add(headingDiv, leftSideDiv, rightSideDiv);
     }
 
     private static Div createLeftSideDiv() {
@@ -115,6 +109,7 @@ public class EmployeesView extends Main {
                 LumoUtility.Display.FLEX,
                 LumoUtility.FlexDirection.COLUMN
         );
+        leftSideDiv.setMaxWidth("400px");
         return leftSideDiv;
     }
 
@@ -156,6 +151,7 @@ public class EmployeesView extends Main {
         );
 
         final var rightSideDiv = new Div(cardDiv);
+        rightSideDiv.setMaxWidth("400px");
         return rightSideDiv;
     }
 
