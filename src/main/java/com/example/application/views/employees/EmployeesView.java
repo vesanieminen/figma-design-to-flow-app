@@ -63,8 +63,8 @@ public class EmployeesView extends Main {
                 LumoUtility.Padding.Horizontal.SMALL,
                 LumoUtility.Gap.XLARGE,
                 Margin.Horizontal.AUTO,
-                LumoUtility.Grid.Breakpoint.Large.COLUMNS_2,
-                LumoUtility.Display.Breakpoint.Large.GRID
+                LumoUtility.Display.Breakpoint.Large.GRID,
+                LumoUtility.Grid.Breakpoint.Large.COLUMNS_2
         );
         add(headingDiv, horizontalSection);
     }
