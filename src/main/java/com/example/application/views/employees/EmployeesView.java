@@ -23,13 +23,11 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 
-import static com.example.application.util.Flex.BASIS_40;
-import static com.example.application.util.Size.MAX_WIDTH_25_REM;
-
 @PageTitle("Employees")
 @Route(value = "employees", layout = MainLayout.class)
 public class EmployeesView extends Main {
 
+    private final String contentWidth = "862px";
     public EmployeesView() {
         final var newEmployeeH1 = new H1("New Employee");
         newEmployeeH1.addClassNames(Margin.Vertical.LARGE);
@@ -45,7 +43,7 @@ public class EmployeesView extends Main {
         );
 
         final var headingDiv = new Div(newEmployeeH1, buttonDiv);
-        headingDiv.setMaxWidth("60rem");
+        headingDiv.setMaxWidth(contentWidth);
         headingDiv.addClassNames(
                 LumoUtility.Display.FLEX,
                 LumoUtility.Gap.XLARGE,
@@ -58,7 +56,7 @@ public class EmployeesView extends Main {
         final var rightSideDiv = createRightSideDiv();
 
         final var horizontalSection = new Section(leftSideDiv, rightSideDiv);
-        horizontalSection.setMaxWidth("60rem");
+        horizontalSection.setMaxWidth(contentWidth);
         horizontalSection.addClassNames(
                 LumoUtility.Padding.Horizontal.SMALL,
                 LumoUtility.Gap.XLARGE,
