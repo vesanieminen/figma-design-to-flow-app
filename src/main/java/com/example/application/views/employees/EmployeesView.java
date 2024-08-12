@@ -40,7 +40,6 @@ public class EmployeesView extends Main {
         final var buttonDiv = new Div(saveButton, cancelButton);
         buttonDiv.addClassNames(
                 LumoUtility.Gap.MEDIUM,
-                LumoUtility.JustifyContent.END,
                 Margin.Vertical.LARGE,
                 LumoUtility.Display.Breakpoint.Small.FLEX
         );
