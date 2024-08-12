@@ -27,10 +27,15 @@ import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 @Route(value = "employees", layout = MainLayout.class)
 public class EmployeesView extends Main {
 
-    private final String contentWidth = "862px";
     public EmployeesView() {
+        addClassNames(
+                LumoUtility.Display.GRID,
+                Margin.Vertical.XLARGE,
+                Margin.Horizontal.AUTO
+        );
+        setMaxWidth("862px");
+
         final var newEmployeeH1 = new H1("New Employee");
-        newEmployeeH1.addClassNames(Margin.Vertical.LARGE);
 
         final var saveButton = new Button("Save");
         saveButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
@@ -38,12 +43,11 @@ public class EmployeesView extends Main {
         final var buttonDiv = new Div(saveButton, cancelButton);
         buttonDiv.addClassNames(
                 LumoUtility.Gap.MEDIUM,
-                Margin.Vertical.LARGE,
                 LumoUtility.Display.Breakpoint.Small.FLEX
         );
 
         final var headingDiv = new Div(newEmployeeH1, buttonDiv);
-        headingDiv.setMaxWidth(contentWidth);
+        headingDiv.setWidthFull();
         headingDiv.addClassNames(
                 LumoUtility.Display.FLEX,
                 LumoUtility.Gap.XLARGE,
@@ -56,11 +60,9 @@ public class EmployeesView extends Main {
         final var rightSideDiv = createRightSideDiv();
 
         final var horizontalSection = new Section(leftSideDiv, rightSideDiv);
-        horizontalSection.setMaxWidth(contentWidth);
         horizontalSection.addClassNames(
                 LumoUtility.Padding.Horizontal.SMALL,
                 LumoUtility.Gap.XLARGE,
-                Margin.Horizontal.AUTO,
                 LumoUtility.Display.Breakpoint.Large.GRID,
                 LumoUtility.Grid.Breakpoint.Large.COLUMNS_2
         );
