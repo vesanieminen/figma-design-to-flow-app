@@ -30,8 +30,6 @@ public class EmployeesView extends Main {
     public EmployeesView() {
         addClassNames(
                 LumoUtility.Display.GRID,
-                LumoUtility.Grid.Column.COLUMNS_1,
-                //LumoUtility.Grid.Breakpoint.Large.COLUMNS_1,
                 Margin.Top.XLARGE,
                 Margin.Horizontal.AUTO,
                 LumoUtility.Padding.Horizontal.MEDIUM
