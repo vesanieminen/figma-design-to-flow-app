@@ -105,13 +105,8 @@ vaadin-avatar {
 }
 
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
-@media (max-width: 800px) {
-    .flex-basis-40 {
-        flex: 100%;
-    }
-}
-
-@media (min-width: 1024px) { .lg\:grid {
-        display: grid;
+@media (min-width: 800px) {
+    .col-span-2-over-800 {
+        grid-column: span 2;
     }
 }

@@ -31,9 +31,10 @@ public class EmployeesView extends Main {
         addClassNames(
                 LumoUtility.Display.GRID,
                 LumoUtility.Grid.Column.COLUMNS_1,
-                LumoUtility.Grid.Breakpoint.Large.COLUMNS_2,
-                Margin.Vertical.XLARGE,
-                Margin.Horizontal.AUTO
+                //LumoUtility.Grid.Breakpoint.Large.COLUMNS_1,
+                Margin.Top.XLARGE,
+                Margin.Horizontal.AUTO,
+                LumoUtility.Padding.Horizontal.MEDIUM
         );
         getStyle().set("column-gap", "62px");
         setMaxWidth("862px");
@@ -53,8 +54,8 @@ public class EmployeesView extends Main {
         headingDiv.addClassNames(
                 LumoUtility.Display.FLEX,
                 LumoUtility.Gap.XLARGE,
-                LumoUtility.JustifyContent.BETWEEN,
-                LumoUtility.Grid.Column.COLUMN_SPAN_2
+                "col-span-2-over-800",
+                LumoUtility.JustifyContent.BETWEEN
         );
 
         final var leftSideDiv = createLeftSideDiv();
