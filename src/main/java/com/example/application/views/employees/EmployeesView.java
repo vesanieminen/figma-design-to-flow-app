@@ -45,10 +45,10 @@ public class EmployeesView extends Main {
                 MARGIN_TOP_XXL
         );
 
-        add(createHeadingSection(), createLeftSideSection(), createRightSideSection());
+        add(createHeadingAndButtonSection(), createFormSection(), createProfilePictureAndTaskSection());
     }
 
-    private static Section createHeadingSection() {
+    private static Section createHeadingAndButtonSection() {
         final var newEmployeeH1 = new H1("New Employee");
         final var buttonDiv = createButtonDiv();
         final var headingDiv = new Section(newEmployeeH1, buttonDiv);
@@ -73,7 +73,7 @@ public class EmployeesView extends Main {
         return buttonDiv;
     }
 
-    private static Section createLeftSideSection() {
+    private static Section createFormSection() {
         final var personalDetailsH3 = new H3("Personal details");
         final var firstnameTextField = new TextField("First name");
         final var lastnameTextField = new TextField("Last name");
@@ -109,20 +109,20 @@ public class EmployeesView extends Main {
         jobDetailsForm.setColspan(teamComboBox, 2);
         jobDetailsForm.setColspan(supervisorComboBox, 2);
 
-        final var leftSideSection = new Section(
+        final var section = new Section(
                 personalDetailsH3,
                 personalDetailsForm,
                 jobDetailsH3,
                 jobDetailsForm
         );
 
-        leftSideSection.addClassNames(
+        section.addClassNames(
                 LumoUtility.Display.FLEX,
                 LumoUtility.FlexDirection.COLUMN,
                 MARGIN_TOP_XXL,
                 COLUMN_MAX_WIDTH_WHEN_OVER_800PX
         );
-        return leftSideSection;
+        return section;
     }
 
     private static FormLayout createForm(AbstractField... fields) {
@@ -134,7 +134,7 @@ public class EmployeesView extends Main {
         return formLayout;
     }
 
-    private static Section createRightSideSection() {
+    private static Section createProfilePictureAndTaskSection() {
         final var profilePictureSpan = new Span("Profile picture");
         final var upload = new Upload();
         upload.setHeight("260px");
@@ -161,12 +161,12 @@ public class EmployeesView extends Main {
                 LumoUtility.BorderRadius.LARGE
         );
 
-        final var rightSideSection = new Section(cardDiv);
-        rightSideSection.addClassNames(
+        final var section = new Section(cardDiv);
+        section.addClassNames(
                 MARGIN_TOP_XXL,
                 COLUMN_MAX_WIDTH_WHEN_OVER_800PX
         );
-        return rightSideSection;
+        return section;
     }
 
     enum Task {
