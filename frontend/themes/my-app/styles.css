@@ -65,7 +65,7 @@ html {
     --lumo-space-xxl: 48px;
 }
 
-.card {
+.card-background-color {
     background-color: var(--light-background-color);
 }
 
@@ -123,4 +123,8 @@ vaadin-avatar {
 
 .mt-xxl {
     margin-top: var( --lumo-space-xxl);
+}
+
+.column-width {
+    width: 400px;
 }

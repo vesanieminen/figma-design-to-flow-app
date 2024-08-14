@@ -12,7 +12,6 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Main;
-import com.vaadin.flow.component.html.Section;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.listbox.MultiSelectListBox;
 import com.vaadin.flow.component.textfield.EmailField;
@@ -23,7 +22,9 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 
+import static com.example.application.util.CSSUtility.CARD_BACKGROUND_COLOR;
 import static com.example.application.util.CSSUtility.COLUMN_GAP;
+import static com.example.application.util.CSSUtility.COLUMN_WIDTH;
 import static com.example.application.util.CSSUtility.CONTENT_MAX_WIDTH;
 import static com.example.application.util.CSSUtility.MARGIN_TOP_XXL;
 import static com.example.application.util.CSSUtility.TWO_COLUMNS;
@@ -42,16 +43,16 @@ public class EmployeesView extends Main {
                 MARGIN_TOP_XXL
         );
 
-        final var newEmployeeH1 = new H1("New Employee");
+        final var headingDiv = createHeadingDiv();
+        final var leftSideDiv = createLeftSideDiv();
+        final var rightSideDiv = createRightSideDiv();
 
-        final var saveButton = new Button("Save");
-        saveButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-        final var cancelButton = new Button("Cancel");
-        final var buttonDiv = new Div(saveButton, cancelButton);
-        buttonDiv.addClassNames(
-                LumoUtility.Gap.MEDIUM,
-                LumoUtility.Display.Breakpoint.Small.FLEX
-        );
+        add(headingDiv, leftSideDiv, rightSideDiv);
+    }
+
+    private static Div createHeadingDiv() {
+        final var newEmployeeH1 = new H1("New Employee");
+        final var buttonDiv = createButtonDiv();
         final var headingDiv = new Div(newEmployeeH1, buttonDiv);
         headingDiv.setWidthFull();
         headingDiv.addClassNames(
@@ -60,11 +61,19 @@ public class EmployeesView extends Main {
                 TWO_COLUMNS,
                 LumoUtility.JustifyContent.BETWEEN
         );
+        return headingDiv;
+    }
 
-        final var leftSideDiv = createLeftSideDiv();
-        final var rightSideDiv = createRightSideDiv();
-
-        add(headingDiv, leftSideDiv, rightSideDiv);
+    private static Div createButtonDiv() {
+        final var saveButton = new Button("Save");
+        saveButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        final var cancelButton = new Button("Cancel");
+        final var buttonDiv = new Div(saveButton, cancelButton);
+        buttonDiv.addClassNames(
+                LumoUtility.Gap.MEDIUM,
+                LumoUtility.Display.Breakpoint.Small.FLEX
+        );
+        return buttonDiv;
     }
 
     private static Div createLeftSideDiv() {
@@ -113,9 +122,9 @@ public class EmployeesView extends Main {
         leftSideDiv.addClassNames(
                 LumoUtility.Display.FLEX,
                 LumoUtility.FlexDirection.COLUMN,
-                MARGIN_TOP_XXL
+                MARGIN_TOP_XXL,
+                COLUMN_WIDTH
         );
-        leftSideDiv.setMaxWidth("400px");
         return leftSideDiv;
     }
 
@@ -148,7 +157,7 @@ public class EmployeesView extends Main {
                 taskListBox
         );
         cardDiv.addClassNames(
-                "card",
+                CARD_BACKGROUND_COLOR,
                 LumoUtility.Display.FLEX,
                 LumoUtility.FlexDirection.COLUMN,
                 LumoUtility.Padding.LARGE,
@@ -157,9 +166,9 @@ public class EmployeesView extends Main {
 
         final var rightSideDiv = new Div(cardDiv);
         rightSideDiv.addClassNames(
-                MARGIN_TOP_XXL
+                MARGIN_TOP_XXL,
+                COLUMN_WIDTH
         );
-        rightSideDiv.setMaxWidth("400px");
         return rightSideDiv;
     }
 
