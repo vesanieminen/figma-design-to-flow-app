@@ -12,6 +12,7 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Main;
+import com.vaadin.flow.component.html.Section;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.listbox.MultiSelectListBox;
 import com.vaadin.flow.component.textfield.EmailField;
@@ -43,13 +44,13 @@ public class EmployeesView extends Main {
                 MARGIN_TOP_XXL
         );
 
-        add(createHeadingDiv(), createLeftSideDiv(), createRightSideDiv());
+        add(createHeadingSection(), createLeftSideSection(), createRightSideSection());
     }
 
-    private static Div createHeadingDiv() {
+    private static Section createHeadingSection() {
         final var newEmployeeH1 = new H1("New Employee");
         final var buttonDiv = createButtonDiv();
-        final var headingDiv = new Div(newEmployeeH1, buttonDiv);
+        final var headingDiv = new Section(newEmployeeH1, buttonDiv);
         headingDiv.addClassNames(
                 LumoUtility.Display.FLEX,
                 LumoUtility.Gap.XLARGE,
@@ -71,7 +72,7 @@ public class EmployeesView extends Main {
         return buttonDiv;
     }
 
-    private static Div createLeftSideDiv() {
+    private static Section createLeftSideSection() {
         final var personalDetailsH3 = new H3("Personal details");
         final var firstnameTextField = new TextField("First name");
         final var lastnameTextField = new TextField("Last name");
@@ -107,20 +108,20 @@ public class EmployeesView extends Main {
         jobDetailsForm.setColspan(teamComboBox, 2);
         jobDetailsForm.setColspan(supervisorComboBox, 2);
 
-        final var leftSideDiv = new Div(
+        final var leftSideSection = new Section(
                 personalDetailsH3,
                 personalDetailsForm,
                 jobDetailsH3,
                 jobDetailsForm
         );
 
-        leftSideDiv.addClassNames(
+        leftSideSection.addClassNames(
                 LumoUtility.Display.FLEX,
                 LumoUtility.FlexDirection.COLUMN,
                 MARGIN_TOP_XXL,
                 COLUMN_MAX_WIDTH
         );
-        return leftSideDiv;
+        return leftSideSection;
     }
 
     private static FormLayout createForm(AbstractField... fields) {
@@ -132,7 +133,7 @@ public class EmployeesView extends Main {
         return formLayout;
     }
 
-    private static Div createRightSideDiv() {
+    private static Section createRightSideSection() {
         final var profilePictureSpan = new Span("Profile picture");
         final var upload = new Upload();
         upload.setHeight("260px");
@@ -159,12 +160,12 @@ public class EmployeesView extends Main {
                 LumoUtility.BorderRadius.LARGE
         );
 
-        final var rightSideDiv = new Div(cardDiv);
-        rightSideDiv.addClassNames(
+        final var rightSideSection = new Section(cardDiv);
+        rightSideSection.addClassNames(
                 MARGIN_TOP_XXL,
                 COLUMN_MAX_WIDTH
         );
-        return rightSideDiv;
+        return rightSideSection;
     }
 
     enum Task {
