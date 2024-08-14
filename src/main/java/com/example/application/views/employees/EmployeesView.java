@@ -69,7 +69,6 @@ public class EmployeesView extends Main {
 
     private static Div createLeftSideDiv() {
         final var personalDetailsH3 = new H3("Personal details");
-        personalDetailsH3.addClassNames(Margin.Top.MEDIUM);
         final var firstnameTextField = new TextField("First name");
         final var lastnameTextField = new TextField("Last name");
         final var emailField = new EmailField("Email");
@@ -81,7 +80,9 @@ public class EmployeesView extends Main {
         personalDetailsForm.setColspan(emailField, 2);
 
         final var jobDetailsH3 = new H3("Job details");
-        jobDetailsH3.addClassNames(Margin.Top.XLARGE);
+        jobDetailsH3.addClassNames(
+                MARGIN_TOP_XXL
+        );
         final var startDate = new DatePicker("Start date");
         startDate.setPlaceholder("Pick a date");
         final var needsOnboardingCheckbox = new Checkbox("Needs onboarding");
@@ -111,7 +112,8 @@ public class EmployeesView extends Main {
 
         leftSideDiv.addClassNames(
                 LumoUtility.Display.FLEX,
-                LumoUtility.FlexDirection.COLUMN
+                LumoUtility.FlexDirection.COLUMN,
+                MARGIN_TOP_XXL
         );
         leftSideDiv.setMaxWidth("400px");
         return leftSideDiv;
@@ -150,11 +152,13 @@ public class EmployeesView extends Main {
                 LumoUtility.Display.FLEX,
                 LumoUtility.FlexDirection.COLUMN,
                 LumoUtility.Padding.LARGE,
-                LumoUtility.BorderRadius.LARGE,
-                Margin.Top.XLARGE
+                LumoUtility.BorderRadius.LARGE
         );
 
         final var rightSideDiv = new Div(cardDiv);
+        rightSideDiv.addClassNames(
+                MARGIN_TOP_XXL
+        );
         rightSideDiv.setMaxWidth("400px");
         return rightSideDiv;
     }
