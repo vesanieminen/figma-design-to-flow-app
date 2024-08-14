@@ -107,7 +107,7 @@ vaadin-avatar {
 }
 
 @media (min-width: 800px) {
-    .two-columns {
+    .two-columns-when-over-800px {
         grid-column: span 2;
     }
 }
@@ -125,7 +125,7 @@ vaadin-avatar {
 }
 
 @media (min-width: 800px) {
-    .column-max-width {
+    .column-max-width-when-over-800px {
         max-width: 400px;
     }
 }

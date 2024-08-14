@@ -25,10 +25,10 @@ import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 
 import static com.example.application.util.CSSUtility.CARD_BACKGROUND_COLOR;
 import static com.example.application.util.CSSUtility.COLUMN_GAP;
-import static com.example.application.util.CSSUtility.COLUMN_MAX_WIDTH;
+import static com.example.application.util.CSSUtility.COLUMN_MAX_WIDTH_WHEN_OVER_800PX;
 import static com.example.application.util.CSSUtility.CONTENT_MAX_WIDTH;
 import static com.example.application.util.CSSUtility.MARGIN_TOP_XXL;
-import static com.example.application.util.CSSUtility.TWO_COLUMNS;
+import static com.example.application.util.CSSUtility.TWO_COLUMNS_WHEN_OVER_800PX;
 
 @PageTitle("Employees")
 @Route(value = "employees", layout = MainLayout.class)
@@ -54,7 +54,7 @@ public class EmployeesView extends Main {
         headingDiv.addClassNames(
                 LumoUtility.Display.FLEX,
                 LumoUtility.Gap.XLARGE,
-                TWO_COLUMNS,
+                TWO_COLUMNS_WHEN_OVER_800PX,
                 LumoUtility.JustifyContent.BETWEEN
         );
         return headingDiv;
@@ -119,7 +119,7 @@ public class EmployeesView extends Main {
                 LumoUtility.Display.FLEX,
                 LumoUtility.FlexDirection.COLUMN,
                 MARGIN_TOP_XXL,
-                COLUMN_MAX_WIDTH
+                COLUMN_MAX_WIDTH_WHEN_OVER_800PX
         );
         return leftSideSection;
     }
@@ -163,7 +163,7 @@ public class EmployeesView extends Main {
         final var rightSideSection = new Section(cardDiv);
         rightSideSection.addClassNames(
                 MARGIN_TOP_XXL,
-                COLUMN_MAX_WIDTH
+                COLUMN_MAX_WIDTH_WHEN_OVER_800PX
         );
         return rightSideSection;
     }
