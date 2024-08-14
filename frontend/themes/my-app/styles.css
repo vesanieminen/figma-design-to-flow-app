@@ -106,7 +106,6 @@ vaadin-avatar {
     border-color: var(--lumo-user-color-3);
 }
 
-/* Responsive layout - makes a one column-layout instead of a two-column layout */
 @media (min-width: 800px) {
     .two-columns {
         grid-column: span 2;
@@ -125,6 +124,8 @@ vaadin-avatar {
     margin-top: var( --lumo-space-xxl);
 }
 
-.column-width {
-    width: 400px;
+@media (min-width: 800px) {
+    .column-max-width {
+        max-width: 400px;
+    }
 }

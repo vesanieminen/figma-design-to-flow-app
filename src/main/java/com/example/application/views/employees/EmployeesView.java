@@ -24,7 +24,7 @@ import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 
 import static com.example.application.util.CSSUtility.CARD_BACKGROUND_COLOR;
 import static com.example.application.util.CSSUtility.COLUMN_GAP;
-import static com.example.application.util.CSSUtility.COLUMN_WIDTH;
+import static com.example.application.util.CSSUtility.COLUMN_MAX_WIDTH;
 import static com.example.application.util.CSSUtility.CONTENT_MAX_WIDTH;
 import static com.example.application.util.CSSUtility.MARGIN_TOP_XXL;
 import static com.example.application.util.CSSUtility.TWO_COLUMNS;
@@ -118,7 +118,7 @@ public class EmployeesView extends Main {
                 LumoUtility.Display.FLEX,
                 LumoUtility.FlexDirection.COLUMN,
                 MARGIN_TOP_XXL,
-                COLUMN_WIDTH
+                COLUMN_MAX_WIDTH
         );
         return leftSideDiv;
     }
@@ -162,7 +162,7 @@ public class EmployeesView extends Main {
         final var rightSideDiv = new Div(cardDiv);
         rightSideDiv.addClassNames(
                 MARGIN_TOP_XXL,
-                COLUMN_WIDTH
+                COLUMN_MAX_WIDTH
         );
         return rightSideDiv;
     }
