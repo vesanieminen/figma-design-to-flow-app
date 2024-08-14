@@ -61,6 +61,8 @@ html {
     --vaadin-button-border:  1px solid var(--lumo-primary-color-50pct);
 
     --light-background-color: #FFF;
+
+    --lumo-space-xxl: 48px;
 }
 
 .card {
@@ -106,7 +108,19 @@ vaadin-avatar {
 
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
 @media (min-width: 800px) {
-    .col-span-2-over-800 {
+    .two-columns {
         grid-column: span 2;
     }
+}
+
+.content-max-width {
+    max-width: 862px;
+}
+
+.column-gap {
+    column-gap: 62px;
+}
+
+.mt-xxl {
+    margin-top: var( --lumo-space-xxl);
 }

@@ -23,6 +23,11 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 
+import static com.example.application.util.CSSUtility.COLUMN_GAP;
+import static com.example.application.util.CSSUtility.CONTENT_MAX_WIDTH;
+import static com.example.application.util.CSSUtility.MARGIN_TOP_XXL;
+import static com.example.application.util.CSSUtility.TWO_COLUMNS;
+
 @PageTitle("Employees")
 @Route(value = "employees", layout = MainLayout.class)
 public class EmployeesView extends Main {
@@ -30,12 +35,12 @@ public class EmployeesView extends Main {
     public EmployeesView() {
         addClassNames(
                 LumoUtility.Display.GRID,
-                Margin.Top.XLARGE,
                 Margin.Horizontal.AUTO,
-                LumoUtility.Padding.Horizontal.MEDIUM
+                LumoUtility.Padding.Horizontal.MEDIUM,
+                COLUMN_GAP,
+                CONTENT_MAX_WIDTH,
+                MARGIN_TOP_XXL
         );
-        getStyle().set("column-gap", "62px");
-        setMaxWidth("862px");
 
         final var newEmployeeH1 = new H1("New Employee");
 
@@ -52,7 +57,7 @@ public class EmployeesView extends Main {
         headingDiv.addClassNames(
                 LumoUtility.Display.FLEX,
                 LumoUtility.Gap.XLARGE,
-                "col-span-2-over-800",
+                TWO_COLUMNS,
                 LumoUtility.JustifyContent.BETWEEN
         );
 
