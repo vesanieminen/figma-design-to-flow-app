@@ -140,7 +140,7 @@ public class EmployeesView extends Main {
     private static Div createRightSideDiv() {
         final var profilePictureSpan = new Span("Profile picture");
         final var upload = new Upload();
-        upload.setHeight("16.25rem");
+        upload.setHeight("260px");
         final var tasksForNewEmployeeH3 = new H3("Tasks for new employee");
         tasksForNewEmployeeH3.addClassNames(
                 Margin.Top.LARGE,
