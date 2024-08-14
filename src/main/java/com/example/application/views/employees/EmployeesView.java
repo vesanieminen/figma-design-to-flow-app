@@ -43,18 +43,13 @@ public class EmployeesView extends Main {
                 MARGIN_TOP_XXL
         );
 
-        final var headingDiv = createHeadingDiv();
-        final var leftSideDiv = createLeftSideDiv();
-        final var rightSideDiv = createRightSideDiv();
-
-        add(headingDiv, leftSideDiv, rightSideDiv);
+        add(createHeadingDiv(), createLeftSideDiv(), createRightSideDiv());
     }
 
     private static Div createHeadingDiv() {
         final var newEmployeeH1 = new H1("New Employee");
         final var buttonDiv = createButtonDiv();
         final var headingDiv = new Div(newEmployeeH1, buttonDiv);
-        headingDiv.setWidthFull();
         headingDiv.addClassNames(
                 LumoUtility.Display.FLEX,
                 LumoUtility.Gap.XLARGE,
