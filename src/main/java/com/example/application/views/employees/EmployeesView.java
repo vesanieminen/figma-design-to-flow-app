@@ -27,6 +27,7 @@ import static com.example.application.util.CSSUtility.CARD_BACKGROUND_COLOR;
 import static com.example.application.util.CSSUtility.COLUMN_GAP;
 import static com.example.application.util.CSSUtility.COLUMN_MAX_WIDTH_WHEN_OVER_800PX;
 import static com.example.application.util.CSSUtility.CONTENT_MAX_WIDTH;
+import static com.example.application.util.CSSUtility.FLEX_OVER_600PX;
 import static com.example.application.util.CSSUtility.MARGIN_TOP_XXL;
 import static com.example.application.util.CSSUtility.TWO_COLUMNS_WHEN_OVER_800PX;
 
@@ -67,7 +68,7 @@ public class EmployeesView extends Main {
         final var buttonDiv = new Div(saveButton, cancelButton);
         buttonDiv.addClassNames(
                 LumoUtility.Gap.MEDIUM,
-                LumoUtility.Display.Breakpoint.Small.FLEX
+                FLEX_OVER_600PX
         );
         return buttonDiv;
     }

@@ -106,12 +106,6 @@ vaadin-avatar {
     border-color: var(--lumo-user-color-3);
 }
 
-@media (min-width: 800px) {
-    .two-columns-when-over-800px {
-        grid-column: span 2;
-    }
-}
-
 .content-max-width {
     max-width: 862px;
 }
@@ -125,7 +119,19 @@ vaadin-avatar {
 }
 
 @media (min-width: 800px) {
+    .two-columns-when-over-800px {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 800px) {
     .column-max-width-when-over-800px {
         max-width: 400px;
+    }
+}
+
+@media (min-width: 600px) {
+    .flex-over-600px {
+        display: flex;
     }
 }
